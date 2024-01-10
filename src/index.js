@@ -50,9 +50,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Menu />
       <Footer />
     </div>
   );
@@ -62,10 +60,33 @@ function Header() {
   return <h1>Fast React Pizza Company</h1>;
 }
 
-function Menu() {}
+function Menu() {
+  return (
+    <div>
+      <h2>Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
+}
 
 function Footer() {
-  return React.createElement("footer", null, "We're currently open!");
+  //   return React.createElement("footer", null, "We're currently open!");
+  const hour = new Date().getHours();
+  console.log(hour);
+  const openHour = 8;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+
+  //   if (hour >= openHour && hour <= closeHour) alert("We are open");
+  //   else alert("We are closed");
+
+  return (
+    <footer>{new Date().toLocaleDateString()} "We're currently open!"</footer>
+  );
 }
 
 // Never nest function declarations
