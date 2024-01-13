@@ -74,11 +74,34 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name="Pizza Salamino"
+        ingredients="Tomato, mozarella, and pepperoni"
+        photoName="pizzas/salamino.jpg"
+        price={10}
+      />
+      <Pizza
+        name="Pizza Fungui"
+        ingredients="cheese, mushrooms"
+        price={5}
+        photoName="pizzas/funghi.jpg"
+      />
     </main>
+  );
+}
+
+function Pizza(props) {
+  console.log(props);
+
+  return (
+    <div className="pizza">
+      <img src={props.photoName} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>${props.price}</span>
+      </div>
+    </div>
   );
 }
 
@@ -102,15 +125,6 @@ function Footer() {
 }
 
 // Never nest function declarations
-function Pizza() {
-  return (
-    <div>
-      <img src="pizzas/salamino.jpg" alt="Pizza" />
-      <h3>Pizza Salamino</h3>
-      <p>Tomato, mozarella, and pepperoni</p>
-    </div>
-  );
-}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
