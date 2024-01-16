@@ -58,7 +58,6 @@ function App() {
 }
 
 function Header() {
-  // const style = { color: "blue", fontSize: "48px", textTransform: "uppercase" };
   const style = {};
 
   return (
@@ -95,26 +94,11 @@ function Menu() {
       ) : (
         <p>We're still working on our menu. Please be back later</p>
       )}
-
-      {/* <Pizza
-        name="Pizza Salamino"
-        ingredients="Tomato, mozarella, and pepperoni"
-        photoName="pizzas/salamino.jpg"
-        price={10}
-      />
-      <Pizza
-        name="Pizza Fungui"
-        ingredients="cheese, mushrooms"
-        price={5}
-        photoName="pizzas/funghi.jpg"
-      /> */}
     </main>
   );
 }
 
 function Pizza({ pizzaObj }) {
-  // if (pizzaObj.soldOut) return null;
-
   return (
     <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""} `}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
@@ -128,16 +112,12 @@ function Pizza({ pizzaObj }) {
 }
 
 function Footer() {
-  //   return React.createElement("footer", null, "We're currently open!");
   const hour = new Date().getHours();
   console.log(hour);
   const openHour = 8;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
-
-  //   if (hour >= openHour && hour <= closeHour) alert("We are open");
-  //   else alert("We are closed");
 
   return (
     <footer className="footer">
@@ -172,5 +152,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-//// Applying css into React
